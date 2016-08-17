@@ -5,7 +5,7 @@ angular.module('weatherBlock', []).component('weatherBlock', {
 	templateUrl: 'js/weather-block/weather-block.template.html',
 	controller: function weatherBlockController($scope, $http, $route) {
 
-		var cityApiEndpoint = 'http://api.openweathermap.org/data/2.5/weather';
+		var cityApiEndpoint = '//api.openweathermap.org/data/2.5/weather';
 
 		$scope.Weather = null;
 		$scope.cities = [];
