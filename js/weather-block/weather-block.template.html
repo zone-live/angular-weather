@@ -1,0 +1,47 @@
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-top inlineBlock" role="navigation">
+    <div class="container top-container">
+
+		<form class="form-horizontal form-body" name="weatherSearch" novalidate>
+			<div class="container">
+				<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+					<ui-select multiple class="form-control" ng-model="Weather" close-on-select="false" placeholder="Search for a city" on-select="citySelected($item)" on-remove="cityRemoved($item)">
+						<ui-select-match placeholder="Search for a city">{{$item.value.name}}</ui-select-match>
+						<ui-select-choices group-by="'description'" repeat="city.value as (key, city) in cities | limitTo: 200" refresh-delay="400"
+						refresh="searchWeather($select.search)" null-option="No cities">
+							<div>{{city.value.name}}</div>
+						</ui-select-choices>
+						<ui-select-no-choice>No cities</ui-select-no-choice>
+					</ui-select>
+				</div><!-- end of select section -->
+			</div>
+		</form><!-- end of FORM -->
+
+    </div>
+</nav>
+
+<main class="inlineBlock">
+	<div class="container">
+		<div class="col-xs-12 marginTop50">
+			<div id="feedback_show" class="context-feedback" ng-show="feedback">{{ feedback }}</div>
+			<div id="feedback_hide" ng-hide="feedback"></div>
+			<p ng-if="itemsList == 0">No results to show. Start searching by city name.</p>
+			
+			<article ng-repeat="item in itemsList" class="weather-block col-xs-6 col-sm-4">
+				<div class="data-wrapper">
+					<div class="col-xs-4 left">
+						<h3 class="city_name"><span class="value">{{item.value.name}}</span></h3>
+					</div>
+					<div class="col-xs-4 left">
+						<h2 class="city_temp"><span class="value">{{item.value.main.temp | number:0}}</span></h2>
+						<p class="city_description"><span class="value">{{item.value.weather[0].description}}</span></p>
+					</div>
+					<div class="col-xs-4 right">
+						<p class="city_humidity"><label>Humidity: </label> <span class="value">{{item.value.main.humidity}}%</span></p>
+						<p class="city_wind_speed"><label>Wind: </label> <span class="value">{{item.value.wind.speed | number:1}}km/h</span></p>
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
+</main>
