@@ -248,3 +248,8 @@ article.weather-block div.left {
     font-weight: 300;
     margin: 0;
 }
+span.date {
+    color: #A1A8AF;
+    font-size: 12px;
+    width: 100%;
+}

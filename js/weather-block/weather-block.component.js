@@ -42,6 +42,8 @@ angular.module('weatherBlock', []).component('weatherBlock', {
 			$scope.itemsList.splice($scope.cityToRemove, 1);
 		};
 
+		$scope.date = new Date();
+
 	}//end of controller
 
 });

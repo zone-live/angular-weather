@@ -30,7 +30,7 @@
 			<article ng-repeat="item in itemsList" class="weather-block col-xs-6 col-sm-4">
 				<div class="data-wrapper">
 					<div class="col-xs-4 left">
-						<h3 class="city_name"><span class="value">{{item.value.name}}</span></h3>
+						<h3 class="city_name"><span class="value">{{item.value.name}}</span> <span class="date">{{date | date:'MMM d'}}</span></h3>
 					</div>
 					<div class="col-xs-4 left">
 						<h2 class="city_temp"><span class="value">{{item.value.main.temp | number:0}}</span></h2>
