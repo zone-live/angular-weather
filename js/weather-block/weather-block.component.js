@@ -24,6 +24,7 @@ angular.module('weatherBlock', []).component('weatherBlock', {
 					} else { 
 						$scope.feedback = false; 
 						$scope.cities.push(result.data);
+						console.log($scope.cities);
 					}
 				});
 
@@ -33,8 +34,10 @@ angular.module('weatherBlock', []).component('weatherBlock', {
 
 		};
 
+
 		$scope.itemsList = [];
 		$scope.citySelected = function($item) {
+			$('input.ui-select-search').val('');
 			$scope.itemsList.push($item);
 		};
 		$scope.cityRemoved = function(city) {

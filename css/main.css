@@ -44,6 +44,7 @@ body {
 .navbar-top {
 	background: #646E7B;
 	border-radius: 0;
+    min-height: 60px;
 }
 .navbar-brand {
     float: left;
@@ -132,7 +133,7 @@ i.select-arrow {
 }
 .customBtn { float: none; }
 .ui-select-multiple.ui-select-bootstrap {
-    padding: 5px;
+    padding: 5px 8px;
     background: rgba(255,255,255,.2);
     margin: 7px 0;
     border-radius: 2px;
@@ -140,6 +141,7 @@ i.select-arrow {
 }
 .ui-select-multiple.ui-select-bootstrap input.ui-select-search {
     margin: 0 0 0 7px;
+    min-height: 38px;
 }
 .ui-select-bootstrap>.ui-select-choices, .ui-select-bootstrap>.ui-select-no-choice {
     border-radius: 0;
@@ -147,7 +149,7 @@ i.select-arrow {
 }
 .ui-select-multiple.ui-select-bootstrap .ui-select-match-item {
     outline: 0;
-    margin: 0 3px;
+    margin: 3px;
     border-radius: 2px;
     background: rgba(255,255,255,.2);
     border: 0;
@@ -198,6 +200,7 @@ article.weather-block .data-wrapper {
     display: inline-block;
     width: 100%;
     margin: 10px 0;
+    height: 110px;
 }
 article.weather-block div * {
     display: inline-block;
@@ -209,6 +212,7 @@ article.weather-block div.right,
 article.weather-block div.left {
     padding: 0;
 }
+// .ui-select-choices { display: none!important; }
 .city_name {
     font-weight: 400;
     font-size: 16px;
@@ -252,4 +256,25 @@ span.date {
     color: #A1A8AF;
     font-size: 12px;
     width: 100%;
+}
+
+
+@media screen and (max-width: 992px) {
+    article.weather-block .data-wrapper {
+        height: 150px;
+    }
+    article.weather-block div.right {
+        position: absolute;
+        right: 40px;
+        bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+article.weather-block .data-wrapper {
+    height: 130px;
+}
+}
+@media screen and (max-width: 480px) {
+
 }
